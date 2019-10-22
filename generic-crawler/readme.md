@@ -14,6 +14,7 @@ chmod +x babylon-demo-project
 ./babylon-demo-project --url https://www.babylonhealth.com
 
 Example usage #2
+
 java -jar generic-crawler-1.0-SNAPSHOT.jar https://luckytrip.co.uk
 
 Output is JSON string containing the sitemap.
