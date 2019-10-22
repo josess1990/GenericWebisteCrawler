@@ -1,0 +1,13 @@
+#!/bin/bash
+case $1 in
+    --url)
+        url=$2
+        java -jar generic-crawler-1.0-SNAPSHOT.jar $url
+        ;;
+    *)
+        printf "***************************\n"
+        printf "* Error: Invalid argument.*\n"
+        printf "***************************\n"
+        exit 1
+esac
+

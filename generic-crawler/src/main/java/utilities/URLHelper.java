@@ -13,6 +13,7 @@ public class URLHelper {
 
     /**
      * Retrieve all internal links contained in a page
+     *
      * @param url Page to crawl
      * @return list of internal links
      */
@@ -25,6 +26,7 @@ public class URLHelper {
             Elements links = doc.select("a[href]");
             for (Element link : links) {
                 String linkValue = link.attr("abs:href").trim();
+                linkValue = linkValue.split(" ")[0];
                 if (linkValue.length() > 0) {
                     URI linkUri = new URI(linkValue);
                     String linkDomain = linkUri.getHost();
@@ -43,18 +45,19 @@ public class URLHelper {
 
     /**
      * Validate if a String is a valid URL
+     *
      * @param url Candidate URL
      * @return True if input string is a valid URL
      */
-    public static boolean validateURL(String url){
-        try{
+    public static boolean validateURL(String url) {
+        try {
             URI uri = new URI(url);
             String baseDomain = uri.getHost();
-            if(baseDomain == null || baseDomain.length()<1){
+            if (baseDomain == null || baseDomain.length() < 1) {
                 return false;
             }
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
