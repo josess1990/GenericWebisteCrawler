@@ -4,9 +4,13 @@ Prerequisites
 Java
 
 Example usage #1: 
+
 decompress tar file
+
 cd babylon-demo
+
 chmod +x babylon-demo-project
+
 ./babylon-demo-project --url https://www.babylonhealth.com
 
 Example usage #2
